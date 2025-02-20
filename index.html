@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallify - Wallpapers</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVW2S3FRDY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JVW2S3FRDY');
+    </script>
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">Wallify Wallpapers
+    </div>
+
+    <!-- Galeria -->
+    <div id="gallery-container">
+      <!-- Imagens e conteúdo da galeria aqui -->
+    </div>
+
+    <!-- Botão "Sobre" -->
+    <div id="about-button">Sobre</div>
+
+    <!-- Seção "Sobre" com Comentários e Avaliações -->
+    <div class="about">
+      <h2>Sobre o Wallify</h2>
+      <p>
+        Wallify é uma plataforma para download de wallpapers exclusivos. Nossa
+        missão é oferecer uma experiência visual única para todos os usuários,
+        com um design minimalista e moderno.
+      </p>
+
+      <!-- Comentários e Avaliações -->
+      <div class="reviews">
+        <h2>Deixe sua Avaliação</h2>
+        <form class="review-form">
+          <textarea placeholder="Escreva sua avaliação..." required></textarea>
+          <div class="stars">
+            <input type="radio" name="star" value="1" id="star1"><label for="star1" class="star">&#9733;</label>
+            <input type="radio" name="star" value="2" id="star2"><label for="star2" class="star">&#9733;</label>
+            <input type="radio" name="star" value="3" id="star3"><label for="star3" class="star">&#9733;</label>
+            <input type="radio" name="star" value="4" id="star4"><label for="star4" class="star">&#9733;</label>
+            <input type="radio" name="star" value="5" id="star5"><label for="star5" class="star">&#9733;</label>
+          </div>
+          <button type="submit" class="submit-review">Enviar Avaliação</button>
+        </form>
+        <div class="review-message"></div> <!-- Para exibir a mensagem -->
+      </div>
+
+      <!-- Botões de Compartilhamento -->
+      <div class="social-share">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        <!-- Ícone do "X" -->
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

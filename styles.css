@@ -1,0 +1,302 @@
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* ================== NAVBAR ================== */
+.navbar {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 44px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+/* ================== GALERIA ================== */
+#gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.img-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.img-container:hover img {
+  filter: saturate(1) contrast(1); /* Remover saturação e contraste */
+  transform: scale(1.08);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+/* ================== BOTÃO DE DOWNLOAD ================== */
+.download-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+.download-btn:hover {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  box-shadow: 0 6px 15px rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+
+.download-btn:hover i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ================== SEÇÃO SOBRE (Botão Lateral) ================== */
+#about-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; /* Botão na parte inferior direita da tela */
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+#about-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+#about-button.open {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.15);
+}
+
+.about {
+  position: fixed;
+  top: 10%;
+  right: -100%; /* Start off-screen */
+  width: 300px;
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.529);
+  z-index: 999;
+  transition: right 0.4s ease-in-out;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.about.open {
+  right: 20px; /* Move to visible position */
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ================== SEÇÃO DE COMENTÁRIOS E AVALIAÇÕES ================== */
+.reviews {
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.reviews h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-form textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #fff;
+  color: #333;
+}
+
+.review-form .stars {
+  margin-bottom: 10px;
+}
+
+.review-form .stars label {
+  font-size: 1.7em;
+  color: #ffcc00;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* ================== ESTRELAS ================== */
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 2em;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.stars input:checked ~ label {
+  color: #f39c12; /* Cor dourada para as estrelas selecionadas */
+}
+
+.stars input:hover ~ label,
+.stars input:checked ~ label {
+  color: #f39c12; /* Cor dourada para o hover também */
+}
+
+.stars input:not(:checked):hover ~ label {
+  color: #e67e22; /* Cor de hover para as estrelas não selecionadas */
+}
+
+.review-form .submit-review {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.review-form .submit-review:hover {
+  transform: scale(1.1);
+}
+
+/* ================== BOTÕES DE COMPARTILHAMENTO ================== */
+.social-share {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-share a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-share a:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.social-share i {
+  font-size: 2em;
+}
+
+/* ================== ÍCONE DO "X" ================== */
+.social-share a i.fa-x {
+  font-size: 2em; /* Ajuste o tamanho do "X" */
+  color: #000; /* Cor padrão do ícone "X" */
+}
+
+/* ================== ÍCONE DO INSTAGRAM ================== */
+.social-share a i.fa-instagram {
+  font-size: 2em;
+  color: #e4405f; /* Cor característica do Instagram */
+}
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Para telas com largura máxima de 1024px (tablets e pequenos dispositivos) */
+@media (max-width: 1024px) {
+  #gallery-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Ajusta as colunas da galeria */
+  }
+
+  .about,
+  .reviews {
+    padding: 20px;
+    background-color: #203a43; /* Atualiza a cor de fundo para combinar com o tema */
+    border-radius: 8px; /* Adiciona bordas arredondadas para um toque mais suave */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra suave para destaque */
+  }
+
+  #about-button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .about {
+    width: 250px;
+    margin: auto; /* Centraliza a seção "Sobre" */
+    transition: width 0.3s ease-in-out; /* Adiciona transição suave */
+  }
+}
